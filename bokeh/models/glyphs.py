@@ -31,6 +31,7 @@ The full list of glyphs built into Bokeh is given below:
 * :class:`~bokeh.models.glyphs.Ray`
 * :class:`~bokeh.models.glyphs.Rect`
 * :class:`~bokeh.models.glyphs.Segment`
+* :class:`~bokeh.models.glyphs.Spline`
 * :class:`~bokeh.models.glyphs.Step`
 * :class:`~bokeh.models.glyphs.Text`
 * :class:`~bokeh.models.glyphs.VArea`
@@ -66,6 +67,7 @@ from ..core.properties import (
     Include,
     Instance,
     Int,
+    Interval,
     NumberSpec,
     Override,
     String,
@@ -122,6 +124,7 @@ __all__ = (
     'Ray',
     'Rect',
     'Segment',
+    'Spline',
     'Step',
     'Text',
     'VArea',
@@ -1110,6 +1113,35 @@ class Segment(LineGlyph):
 
     line_props = Include(LineProps, use_prefix=False, help="""
     The %s values for the segments.
+    """)
+
+class Spline(LineGlyph):
+    ''' Render segments.
+
+    '''
+
+    _args = ('x', 'y')
+
+    __example__ = "examples/reference/models/Spline.py"
+
+    x = NumberSpec(default=field("x"), help="""
+    The x-coordinates for the points of the spline.
+    """)
+
+    y = NumberSpec(default=field("y"), help="""
+    The y-coordinates for the points of the spline.
+    """)
+
+    tension = Interval(Float, 0, 1, default=0.5, help="""
+    Defines how "thight" the spline will be. Zero will result in straight lines.
+    """)
+
+    closed = Bool(default=False, help="""
+    Create a closed loop spline. This is different from setting the first and last points the same.
+    """)
+
+    line_props = Include(ScalarLineProps, use_prefix=False, help="""
+    The %s values for the spline.
     """)
 
 class Step(XYGlyph, LineGlyph):
