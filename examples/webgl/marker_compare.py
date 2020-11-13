@@ -14,8 +14,7 @@ source = ColumnDataSource(flowers)
 
 def make_plot(title, marker, backend):
     p = figure(title=title, plot_width=350, plot_height=350, output_backend=backend)
-    p.scatter("petal_length", "petal_width", source=source,
-              color='blue', fill_alpha=0.2, size=12, marker=marker)
+    getattr(p, marker)("petal_length", "petal_width", source=source, color="blue", fill_alpha=0.2, size=12)
     return p
 
 tabs = []
