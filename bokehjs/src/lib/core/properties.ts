@@ -546,7 +546,7 @@ export class ColorSpec extends DataSpec<types.Color | null> {
 
 export class FontSizeSpec extends DataSpec<string> {}
 
-export class MarkerSpec extends DataSpec<string> {}
+export class MarkerSpec extends DataSpec<enums.MarkerType> {}
 
 export class StringSpec extends DataSpec<string> {}
 
