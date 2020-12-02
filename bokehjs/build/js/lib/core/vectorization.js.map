@@ -1,0 +1,1 @@
+{"version":3,"file":"vectorization.js","sourceRoot":"","sources":["../../../../src/lib/core/vectorization.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,aAAa,EAAC,MAAM,cAAc,CAAA;AAmC1C,MAAM,UAAU,OAAO,CAAI,GAAY;IACrC,OAAO,aAAa,CAAC,GAAG,CAAC,IAAI,OAAO,IAAI,GAAG,CAAA;AAC7C,CAAC;AAED,MAAM,UAAU,OAAO,CAAC,GAAY;IAClC,OAAO,aAAa,CAAC,GAAG,CAAC,IAAI,OAAO,IAAI,GAAG,CAAA;AAC7C,CAAC"}
